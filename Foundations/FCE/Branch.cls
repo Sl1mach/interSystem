@@ -37,13 +37,7 @@ Class FCE.Branch Extends (%Persistent,%Library.Populate,%XML.Adaptor)
 		set ..Closes = $ztimeh(object.Closes)
 		return $$$OK
 	}
-
-
-
-
-
-
-
+	
 
 
 
