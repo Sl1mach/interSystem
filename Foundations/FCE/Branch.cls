@@ -15,6 +15,8 @@ Class FCE.Branch Extends (%Persistent,%Library.Populate,%XML.Adaptor)
 		}
 	}];
 	
+	Property CurrencyBalances as array of %Numeric (MINVAL = 0, MAXVAL = 100000000, POPSPEC=":5:##class(FCE.Currency).Currency()") [SqlFieldName = Balance];
+	Index CBIndex on CurrencyBalances(KEYS);
 	
 	Index PhoneIndex on Phone [Unique];
 	Index AddressIndex on Address [Unique];
@@ -64,6 +66,11 @@ Class FCE.Branch Extends (%Persistent,%Library.Populate,%XML.Adaptor)
 <Value name="6">
 <Value>Closes</Value>
 </Value>
+</Data>
+<Data name="CurrencyBalances">
+<Attribute>CurrencyBalances</Attribute>
+<Structure>subnode</Structure>
+<Subscript>"CurrencyBalances"</Subscript>
 </Data>
 <DataLocation>^FCE.BranchD</DataLocation>
 <DefaultData>BranchDefaultData</DefaultData>
